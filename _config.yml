@@ -1,0 +1,5 @@
+title: Crypto Dashboard
+description: Real-time cryptocurrency prices with affiliate links
+theme: jekyll-theme-minimal
+baseurl: ""
+url: "https://crypto-dashboard-$RANDOM_SUFFIX.github.io"

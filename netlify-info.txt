@@ -1,0 +1,23 @@
+Netlify Deployment Information
+==============================
+Timestamp: Tue Mar 17 17:08:35 UTC 2026
+Site Directory: crypto-dashboard
+Temporary Email: crypto-1773767315@tempmail.com
+Temporary Password: TempPass123!15
+Suggested Site Name: crypto-dashboard-1773767315
+ZIP File: crypto-site-1773767315.zip
+Files in site: 0
+Total size: 
+
+Steps for manual deployment:
+1. Go to https://app.netlify.com/signup
+2. Sign up with email/password above
+3. Click "Deploy manually"
+4. Drag and drop crypto-dashboard folder
+5. Wait for processing
+6. Get URL: https://[name].netlify.app
+
+Alternative: Use standalone HTML file
+File: standalone-crypto-dashboard.html
+Size:  bytes
+Works: Offline, no server needed

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://c89fd5c7625b698d-187-124-229-98.serveousercontent.com/sitemap.xml
