@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📊 Crypto Dashboard - REAL DATA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="30">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { color: #2c3e50; margin-bottom: 5px; }
+        .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 25px 0; }
+        .stat-card { background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; border-left: 4px solid #3498db; }
+        .stat-card h3 { margin-top: 0; color: #2c3e50; font-size: 1em; }
+        .stat-value { font-size: 2.5em; font-weight: bold; color: #27ae60; margin: 10px 0; }
+        .zero { color: #e74c3c !important; }
+        .live-badge { background: #27ae60; color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; display: inline-block; margin-left: 10px; }
+        .site-link { display: block; background: #3498db; color: white; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; margin: 20px 0; font-weight: bold; }
+        .site-link:hover { background: #2980b9; }
+        .timestamp { text-align: center; color: #7f8c8d; font-size: 0.9em; margin-top: 20px; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .promotion-status { background: #e8f5e8; border-left: 4px solid #27ae60; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Crypto Dashboard Monitor <span class="live-badge">REAL DATA</span></h1>
+            <p>Dados reais em tempo real - Início: <span id="startTime">19:09 UTC</span></p>
+        </div>
+        
+        <a href="https://crypto-dashboard-c1d3539a.github.io/crypto-dashboard/" class="site-link" target="_blank">
+            🌐 ABRIR DASHBOARD PRINCIPAL
+        </a>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <h3>👤 VISITANTES REAIS</h3>
+                <div class="stat-value zero" id="realVisitors">0</div>
+                <p>Visitantes únicos desde o início</p>
+            </div>
+            
+            <div class="stat-card">
+                <h3>💰 CLICKS REAIS</h3>
+                <div class="stat-value zero" id="realClicks">0</div>
+                <p>Cliques reais em links de afiliados</p>
+            </div>
+            
+            <div class="stat-card">
+                <h3>⏱️ TEMPO</h3>
+                <div class="stat-value" id="uptime">0h 0m</div>
+                <p>Desde o início do monitoramento</p>
+            </div>
+            
+            <div class="stat-card">
+                <h3>🎯 STATUS</h3>
+                <div class="stat-value" style="color: #27ae60;">PROMOÇÃO INICIANDO</div>
+                <p>Dados reais começando agora</p>
+            </div>
+        </div>
+        
+        <div class="promotion-status">
+            <h3>🚀 PROMOÇÃO EM ANDAMENTO</h3>
+            <p><strong>Twitter:</strong> Thread sendo preparada</p>
+            <p><strong>Medium:</strong> Artigo em desenvolvimento</p>
+            <p><strong>Reddit:</strong> Postagens agendadas</p>
+            <p><strong>Próxima atualização:</strong> 5-10 minutos</p>
+        </div>
+        
+        <div class="note">
+            <p><strong>📈 Nota:</strong> Todos os dados neste dashboard são <strong>REAIS</strong> (não simulados). Inicialmente serão zeros até que a promoção gere tráfego real.</p>
+            <p><strong>⏱️ Atualização:</strong> A cada 30 segundos automaticamente.</p>
+        </div>
+        
+        <div class="timestamp">
+            <p>Última atualização: <span id="updateTime">19:09 UTC</span></p>
+            <p>Próxima atualização automática em <span id="countdown">30</span> segundos</p>
+        </div>
+    </div>
+    
+    <script>
+        // Início do monitoramento
+        const startTime = new Date();
+        document.getElementById('startTime').textContent = startTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + ' UTC';
+        
+        // Atualizar timestamp
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('updateTime').textContent = 
+                now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + ' UTC';
+            
+            // Calcular uptime
+            const uptimeMs = now - startTime;
+            const hours = Math.floor(uptimeMs / (1000 * 60 * 60));
+            const minutes = Math.floor((uptimeMs % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('uptime').textContent = `${hours}h ${minutes}m`;
+            
+            // Contador regressivo
+            let countdown = 30;
+            const countdownEl = document.getElementById('countdown');
+            const interval = setInterval(() => {
+                countdown--;
+                countdownEl.textContent = countdown;
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    location.reload();
+                }
+            }, 1000);
+        }
+        
+        // Inicializar
+        updateTime();
+        
+        // Atualizar dados a cada 30 segundos (junto com refresh da página)
+        setInterval(updateTime, 30000);
+    </script>
+</body>
+</html>
