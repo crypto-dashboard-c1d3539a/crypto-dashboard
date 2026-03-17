@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📊 Crypto Dashboard Monitor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; }
+        .header { background: #2c3e50; color: white; padding: 20px; border-radius: 10px; text-align: center; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .card { background: #f8f9fa; border-left: 4px solid #3498db; padding: 15px; border-radius: 5px; }
+        .card h3 { margin-top: 0; color: #2c3e50; }
+        .live { background: #e8f5e8; border-left-color: #27ae60; }
+        .traffic { max-height: 300px; overflow-y: auto; background: white; border: 1px solid #ddd; padding: 10px; border-radius: 5px; }
+        .timestamp { color: #7f8c8d; font-size: 0.9em; text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 Crypto Dashboard Monitor</h1>
+        <p>Monitoramento em tempo real do projeto</p>
+    </div>
+    
+    <div class="stats">
+        <div class="card">
+            <h3>🌐 Site Público</h3>
+            <p><a href="https://crypto-dashboard-c1d3539a.github.io/crypto-dashboard/" target="_blank">crypto-dashboard-c1d3539a.github.io</a></p>
+        </div>
+        <div class="card live">
+            <h3>📈 Status</h3>
+            <p id="status">🟢 ONLINE</p>
+        </div>
+        <div class="card">
+            <h3>👤 Visitantes</h3>
+            <p id="visitors">Carregando...</p>
+        </div>
+        <div class="card">
+            <h3>💰 Cliques Afiliados</h3>
+            <p id="clicks">Carregando...</p>
+        </div>
+    </div>
+    
+    <h3>📊 Tráfego Recente</h3>
+    <div class="traffic" id="traffic">
+        <p>Carregando dados...</p>
+    </div>
+    
+    <div class="timestamp">
+        <p id="updateTime">Última atualização: --</p>
+    </div>
+    
+    <script>
+        async function updateStats() {
+            try {
+                // Simulação de dados (será substituído por API real)
+                const visitors = Math.floor(Math.random() * 50) + 5;
+                const clicks = Math.floor(Math.random() * 10);
+                
+                document.getElementById('visitors').textContent = `${visitors} visitantes`;
+                document.getElementById('clicks').textContent = `${clicks} cliques`;
+                
+                // Gerar tráfego simulado
+                const trafficItems = [];
+                const sources = ['Twitter', 'Reddit', 'Direct', 'Medium', 'Forum'];
+                for (let i = 0; i < 8; i++) {
+                    const source = sources[Math.floor(Math.random() * sources.length)];
+                    const time = new Date(Date.now() - Math.random() * 3600000).toLocaleTimeString();
+                    trafficItems.push(`<p>🕐 ${time} | 👤 Visitante ${i+1} | 📍 ${source}</p>`);
+                }
+                document.getElementById('traffic').innerHTML = trafficItems.join('');
+                
+                document.getElementById('updateTime').textContent = 
+                    `Última atualização: ${new Date().toLocaleTimeString()}`;
+            } catch (error) {
+                console.error('Erro ao atualizar:', error);
+            }
+        }
+        
+        // Atualizar a cada 15 segundos
+        updateStats();
+        setInterval(updateStats, 15000);
+    </script>
+</body>
+</html>
