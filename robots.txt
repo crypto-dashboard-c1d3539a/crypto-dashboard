@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
-Sitemap: https://c89fd5c7625b698d-187-124-229-98.serveousercontent.com/sitemap.xml
+Disallow: /private/
+
+Sitemap: https://crypto-dashboard-c1d3539a.github.io/crypto-dashboard/sitemap.xml
+
+# Crypto Dashboard - Real-time Market Data
+# Contact: apollomission066@gmail.com
