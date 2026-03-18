@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://c89fd5c7625b698d-187-124-229-98.serveousercontent.com/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://crypto-dashboard-c1d3539a.github.io/crypto-dashboard/</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://crypto-dashboard-c1d3539a.github.io/crypto-dashboard/dashboard-real.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://github.com/crypto-dashboard-c1d3539a/crypto-dashboard/issues/1</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
