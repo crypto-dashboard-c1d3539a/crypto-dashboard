@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "data": {
+    "symbol": "BTC",
+    "name": "Bitcoin",
+    "price_usd": 68542.50,
+    "price_eur": 62500.75,
+    "price_btc": 1,
+    "change_24h": 2.3,
+    "change_24h_percent": "+2.3%",
+    "market_cap": 1345000000000,
+    "volume_24h": 32500000000,
+    "high_24h": 68900.25,
+    "low_24h": 67200.50,
+    "last_updated": "2026-03-18T01:45:00Z",
+    "source": "Crypto Dashboard API v1.0",
+    "endpoint": "/api/v1/price/btc",
+    "tier": "free",
+    "rate_limit": "10 requests per minute",
+    "next_update": "60 seconds",
+    "documentation": "https://crypto-dashboard-c1d3539a.github.io/crypto-dashboard/api-docs.html"
+  },
+  "metadata": {
+    "timestamp": "2026-03-18T01:45:00Z",
+    "version": "1.0.0",
+    "cache_until": "2026-03-18T01:46:00Z"
+  }
+}
